@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow dashboard and admin pages
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /signup
+
+# Sitemap location
+Sitemap: https://citywitty.com/sitemap.xml

@@ -1,0 +1,578 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { TrendingUp, Users, Target, Briefcase, Shield, Zap, CircleCheck as CheckCircle2, ArrowRight, Star, MapPin, Handshake, DollarSign, Clock, Award } from 'lucide-react';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export default function Home() {
+  return (
+    <div className="pt-16">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-orange-500 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+            >
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              >
+                Start Your Own Business with CityWitty
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-xl md:text-2xl text-blue-50 mb-8"
+              >
+                India's First Multi-City Multi-Brand Discount Card Platform
+              </motion.p>
+              <motion.p variants={fadeInUp} className="text-lg text-blue-100 mb-8">
+                Empowering entrepreneurs to build a profitable business without disturbing their current one.
+              </motion.p>
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+                <Link href="/apply">
+                  <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-lg">
+                    Apply for Franchise
+                    <ArrowRight className="ml-2" size={20} />
+                  </Button>
+                </Link>
+                <Link href="/model">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800"
+                alt="Business Partnership"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white text-gray-900 rounded-xl p-6 shadow-xl">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">50+</div>
+                    <div className="text-sm text-gray-600">Active Cities</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              Why <span className="gradient-text">CityWitty</span>?
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Join a proven platform that's revolutionizing local business growth across India
+            </motion.p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800"
+                alt="Team collaboration"
+                className="rounded-2xl shadow-xl"
+              />
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="space-y-6"
+            >
+              {[
+                {
+                  icon: Shield,
+                  title: 'Strong Brand Presence',
+                  description: 'CityWitty is already helping businesses in multiple cities across India.',
+                },
+                {
+                  icon: TrendingUp,
+                  title: 'Growing Demand',
+                  description: 'Merchants are looking for innovative ways to attract customers – we solve that.',
+                },
+                {
+                  icon: Users,
+                  title: 'Community Model',
+                  description: 'Connecting businesses and customers under one platform.',
+                },
+                {
+                  icon: Award,
+                  title: 'Proven System',
+                  description: 'Standardized operations with FOCO (Franchise Owned Company Operated) model.',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              <span className="gradient-text">FOCO</span> Franchise Model
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Franchise Owned Company Operated - The Best of Both Worlds
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {[
+              {
+                step: '01',
+                title: 'You Invest',
+                description: 'Provide the initial capital and secure your territory',
+                icon: DollarSign,
+              },
+              {
+                step: '02',
+                title: 'We Operate',
+                description: 'CityWitty handles all operations, hiring, and management',
+                icon: Briefcase,
+              },
+              {
+                step: '03',
+                title: 'We Market',
+                description: 'Professional campaigns to drive merchant sign-ups',
+                icon: Target,
+              },
+              {
+                step: '04',
+                title: 'You Earn',
+                description: 'Receive consistent profits without daily involvement',
+                icon: TrendingUp,
+              },
+            ].map((item, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="h-full hover:shadow-xl transition-shadow border-2 border-transparent hover:border-blue-200">
+                  <CardContent className="p-6">
+                    <div className="text-5xl font-bold text-blue-100 mb-4">{item.step}</div>
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-4">
+                      <item.icon className="text-white" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 bg-white rounded-2xl shadow-lg p-8"
+          >
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="flex items-center space-x-3">
+                <CheckCircle2 className="text-green-500 flex-shrink-0" size={24} />
+                <span className="font-medium">No HR Hassle</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle2 className="text-green-500 flex-shrink-0" size={24} />
+                <span className="font-medium">Proven Track Record</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle2 className="text-green-500 flex-shrink-0" size={24} />
+                <span className="font-medium">Ongoing Support</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle2 className="text-green-500 flex-shrink-0" size={24} />
+                <span className="font-medium">Scalable Income</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              Eligibility Criteria
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Who Can Become a CityWitty Franchise Partner?
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {[
+              {
+                icon: Handshake,
+                title: 'Business Passion',
+                description: 'Passionate about business growth and networking',
+              },
+              {
+                icon: TrendingUp,
+                title: 'Long-term Vision',
+                description: 'Willing to invest in a long-term, scalable business',
+              },
+              {
+                icon: Briefcase,
+                title: 'Office Space',
+                description: 'Access to a small office space or ability to arrange one',
+              },
+              {
+                icon: MapPin,
+                title: 'Market Knowledge',
+                description: 'Basic understanding of local market dynamics',
+              },
+              {
+                icon: Shield,
+                title: 'Brand Alignment',
+                description: 'Commitment to brand values and customer satisfaction',
+              },
+              {
+                icon: Users,
+                title: 'People Skills',
+                description: 'Good communication and relationship-building abilities',
+              },
+            ].map((item, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="h-full hover:shadow-lg transition-all hover:-translate-y-1">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <item.icon className="text-white" size={28} />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                    <p className="text-gray-600 text-sm">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              Franchise Benefits
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Why CityWitty is the Perfect Business Opportunity
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                icon: Briefcase,
+                title: 'Fully Managed Operations',
+                description: 'No HR hassle – we handle hiring, training, and tracking for you.',
+                color: 'from-blue-600 to-blue-500',
+              },
+              {
+                icon: DollarSign,
+                title: 'Strong ROI',
+                description: 'Recover your investment over time with solid monthly returns.',
+                color: 'from-orange-500 to-orange-400',
+              },
+              {
+                icon: Clock,
+                title: 'Business Flexibility',
+                description: 'Manage alongside your existing business or job seamlessly.',
+                color: 'from-blue-600 to-blue-500',
+              },
+              {
+                icon: MapPin,
+                title: 'Exclusive Territory',
+                description: 'Own CityWitty rights in your city/region with no competition.',
+                color: 'from-orange-500 to-orange-400',
+              },
+              {
+                icon: Award,
+                title: 'Brand Power',
+                description: 'Join a growing nationwide network with strong recognition.',
+                color: 'from-blue-600 to-blue-500',
+              },
+              {
+                icon: Zap,
+                title: 'Continuous Support',
+                description: 'Marketing, tech, and operational help from HQ at all times.',
+                color: 'from-orange-500 to-orange-400',
+              },
+            ].map((item, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-2 group">
+                  <CardContent className="p-8">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <item.icon className="text-white" size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              Growth Opportunity
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Your City Could Be Next
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200"
+              alt="India Map"
+              className="w-full rounded-2xl shadow-xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl flex items-end justify-center p-8">
+              <div className="text-center text-white">
+                <p className="text-2xl font-bold mb-2">CityWitty is expanding rapidly across India</p>
+                <p className="text-lg">Be the first to represent our brand in your city and dominate the market</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-3 gap-8 mt-12"
+          >
+            {[
+              { number: '50+', label: 'Active Cities' },
+              { number: '500+', label: 'Partner Merchants' },
+              { number: '100K+', label: 'Active Users' },
+            ].map((stat, index) => (
+              <motion.div key={index} variants={fadeInUp} className="text-center">
+                <div className="text-5xl font-bold gradient-text mb-2">{stat.number}</div>
+                <div className="text-xl text-gray-600">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
+              What Our Partners Say
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real stories from successful CityWitty franchise owners
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                name: 'Rajesh Kumar',
+                role: 'Franchise Partner - Mumbai',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
+                content: 'CityWitty has been a game-changer for me. The FOCO model means I earn without the daily operational stress. Highly recommend!',
+                rating: 5,
+              },
+              {
+                name: 'Priya Sharma',
+                role: 'Franchise Partner - Delhi',
+                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
+                content: 'The support from the CityWitty team is exceptional. They handle everything while I focus on growing my investment.',
+                rating: 5,
+              },
+              {
+                name: 'Amit Patel',
+                role: 'Franchise Partner - Bangalore',
+                image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150',
+                content: 'Best business decision I made. The returns are consistent and the brand is growing rapidly across India.',
+                rating: 5,
+              },
+            ].map((testimonial, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="h-full hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="text-orange-500 fill-orange-500" size={18} />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
+                    <div className="flex items-center space-x-3">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="font-semibold">{testimonial.name}</div>
+                        <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-orange-500 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Build a Profitable Business?
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl mb-8 text-blue-50">
+              Apply now to become a CityWitty Franchise Partner and start your journey today
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link href="/apply">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
+                  Apply Now
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}

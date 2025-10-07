@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { DollarSign, Briefcase, Target, TrendingUp, CircleCheck as CheckCircle2, Users, Building2, Megaphone, ChartBar as BarChart3, ArrowRight } from 'lucide-react';
+import { DollarSign, Briefcase, Target, TrendingUp, CircleCheck as CheckCircle2, Users, Building2, Megaphone, ChartBar as BarChart3, ArrowRight, IndianRupee } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,7 +13,7 @@ const fadeInUp = {
 
 export default function ModelPage() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">
@@ -36,7 +36,7 @@ export default function ModelPage() {
                 step: '01',
                 title: 'You Invest',
                 description: 'Provide capital and secure exclusive territory rights',
-                icon: DollarSign,
+                icon: IndianRupee,
               },
               {
                 step: '02',
@@ -104,7 +104,7 @@ export default function ModelPage() {
             <Card className="mb-6">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4 flex items-center">
-                  <DollarSign className="text-blue-600 mr-2" />
+                  <IndianRupee className="text-blue-600 mr-2" />
                   Initial Investment
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -165,7 +165,7 @@ export default function ModelPage() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Join successful entrepreneurs across India who are building wealth with CityWitty's proven FOCO model
           </p>
-          <Link href="/apply">
+          <Link href="/signup">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-12 py-6 text-lg">
               Apply for Franchise
               <ArrowRight className="ml-2" size={20} />

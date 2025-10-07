@@ -24,7 +24,7 @@ export default function GrowthPage() {
   ];
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">
@@ -155,7 +155,7 @@ export default function GrowthPage() {
           <p className="text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
             Join the growth story and become the exclusive CityWitty representative in your region
           </p>
-          <Link href="/apply">
+          <Link href="/signup">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
               Apply for Franchise
               <ArrowRight className="ml-2" size={20} />

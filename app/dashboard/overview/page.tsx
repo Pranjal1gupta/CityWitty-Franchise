@@ -2,7 +2,7 @@
 
 import DashboardLayout from '@/components/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, Users, DollarSign, Target, ArrowUp, ArrowDown } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Target, ArrowUp, ArrowDown, IndianRupee } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const monthlyData = [
@@ -35,7 +35,7 @@ export default function OverviewPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <DollarSign className="text-blue-600" size={24} />
+                  <IndianRupee className="text-blue-600" size={24} />
                 </div>
                 <div className="flex items-center text-green-600 text-sm font-medium">
                   <ArrowUp size={16} className="mr-1" />

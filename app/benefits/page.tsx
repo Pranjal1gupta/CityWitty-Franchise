@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Briefcase, DollarSign, Clock, MapPin, Award, Zap, Shield, Users, TrendingUp, Headphones } from 'lucide-react';
+import { Briefcase, Clock, MapPin, Award, Zap, Shield, Users, TrendingUp, Headphones, IndianRupee } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export default function BenefitsPage() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">
@@ -32,7 +32,7 @@ export default function BenefitsPage() {
               benefits: ['Professional team management', 'Training programs', 'Performance tracking', 'Quality assurance'],
             },
             {
-              icon: DollarSign,
+              icon: IndianRupee,
               title: 'Strong ROI',
               description: 'Recover your investment over time with solid monthly returns. Proven track record across 50+ cities.',
               color: 'from-orange-500 to-orange-400',
@@ -144,7 +144,7 @@ export default function BenefitsPage() {
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <Headphones className="text-white" size={18} />
+                  <Zap className="text-white" size={18} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>

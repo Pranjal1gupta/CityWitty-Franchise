@@ -74,7 +74,7 @@ export default function TestimonialsPage() {
   ];
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">
@@ -148,7 +148,7 @@ export default function TestimonialsPage() {
             These are real partners achieving real results. Your success story could be next!
           </p>
           <div className="flex justify-center gap-4">
-            <a href="/apply">
+            <a href="/signup">
               <button className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
                 Apply Now
               </button>

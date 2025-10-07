@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { Menu, X, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { getSession, clearSession } from '@/lib/auth';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Menu, X, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { getSession, clearSession } from "@/lib/auth";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -23,19 +23,19 @@ export default function Navbar() {
     clearSession();
     setUser(null);
     setIsDropdownOpen(false);
-    router.push('/');
+    router.push("/");
   };
 
   const navLinks = [
-    { href: '/#why', label: 'Why CityWitty' },
-    { href: '/model', label: 'Model' },
-    { href: '/benefits', label: 'Benefits' },
-    { href: '/growth', label: 'Cities' },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/apply', label: 'Apply' },
+    { href: "/#why", label: "Why CityWitty" },
+    { href: "/model", label: "Model" },
+    { href: "/benefits", label: "Benefits" },
+    { href: "/growth", label: "Cities" },
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/signup", label: "Apply" },
   ];
 
-  const isDashboard = pathname?.startsWith('/dashboard');
+  const isDashboard = pathname?.startsWith("/dashboard");
 
   if (isDashboard) return null;
 
@@ -44,12 +44,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-              CW
+            <div className="w-32 h-32 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 transition-transform duration-300 hover:scale-105">
+              <img
+                src="https://res.cloudinary.com/dlifnml9x/image/upload/v1759829662/logo_epa9u7.png"
+                alt="CityWitty Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
-              CityWitty
-            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -139,7 +140,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-gray-200 bg-white"
           >

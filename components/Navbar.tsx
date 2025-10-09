@@ -32,6 +32,7 @@ export default function Navbar() {
     { href: "/benefits", label: "Benefits" },
     { href: "/growth", label: "Cities" },
     { href: "/testimonials", label: "Testimonials" },
+    { href: "/contact", label: "Contact" },
     { href: "/signup", label: "Apply" },
   ];
 

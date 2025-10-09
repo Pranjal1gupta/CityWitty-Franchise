@@ -79,8 +79,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="inline-block bg-blue-50 text-blue-700 font-semibold text-sm sm:text-base px-5 py-2.5 
-        rounded-full mb-5 shadow-sm border border-blue-100 hover:shadow-md hover:scale-105 transition-all duration-300
-        text-center md:text-left"
+        rounded-full mb-5 shadow-sm border border-blue-100 hover:shadow-md hover:scale-105 transition-all
+        text-center md:text-left animate-pulse"
               >
                 ⭐ Trusted by{" "}
                 <span className="text-blue-800 font-bold">
@@ -387,6 +387,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-orange-500 text-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={staggerContainer}
+      className="flex flex-col md:flex-row items-center md:items-start justify-between"
+    >
+      {/* Left Text */}
+      <div className="md:w-2/3 text-left mb-8 md:mb-0">
+        <motion.h6
+          variants={fadeInUp}
+          className="text-xl md:text-3xl font-bold mb-4"
+        >
+          Reach out to discuss how you can join and grow with CityWitty.
+        </motion.h6>
+        {/* <motion.p variants={fadeInUp} className="text-xl text-blue-50">
+          Reach out to us and start your CityWitty journey today!
+        </motion.p> */}
+      </div>
+
+      {/* Right Button */}
+      <motion.div variants={fadeInUp} className="md:w-1/3 flex justify-end">
+        <Link href="/signup">
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg animate-bounce"
+          >
+            Contact Us
+            <ArrowRight className="ml-2" size={20} />
+          </Button>
+        </Link>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
+
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -557,7 +596,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -626,7 +665,7 @@ export default function Home() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -660,7 +699,7 @@ export default function Home() {
                 name: "Rajesh Kumar",
                 role: "Franchise Partner - Mumbai",
                 image:
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
+                  "https://res.cloudinary.com/dlifnml9x/image/upload/v1760002760/360_F_661301418_Fkwtdj4CORK5IeFD4hYAdMratgVCUi8x_czoo4q.jpg",
                 content:
                   "CityWitty has been a game-changer for me. The FOCO model means I earn without the daily operational stress. Highly recommend!",
                 rating: 5,
@@ -669,7 +708,7 @@ export default function Home() {
                 name: "Priya Sharma",
                 role: "Franchise Partner - Delhi",
                 image:
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
+                  "https://res.cloudinary.com/dlifnml9x/image/upload/v1760002760/360_F_612738927_LIcFCiKHQhHq9R1QhkVRKvT6RelYUmgv_hkmdzq.jpg",
                 content:
                   "The support from the CityWitty team is exceptional. They handle everything while I focus on growing my investment.",
                 rating: 5,
@@ -678,7 +717,7 @@ export default function Home() {
                 name: "Amit Patel",
                 role: "Franchise Partner - Bangalore",
                 image:
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
+                  "https://res.cloudinary.com/dlifnml9x/image/upload/v1760002960/istockphoto-1433286562-612x612_hm2wus.jpg",
                 content:
                   "Best business decision I made. The returns are consistent and the brand is growing rapidly across India.",
                 rating: 5,
@@ -735,8 +774,8 @@ export default function Home() {
               Ready to Build a Profitable Business?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl mb-8 text-blue-50">
-              Apply now to become a CityWitty Franchise Partner and start your
-              journey today
+              Get in touch with our team to explore CityWitty Franchise options
+              and grow with us.
             </motion.p>
             <motion.div variants={fadeInUp}>
               <Link href="/signup">
@@ -744,7 +783,7 @@ export default function Home() {
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
                 >
-                  Apply Now
+                  Contact Us
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>

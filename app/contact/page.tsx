@@ -229,7 +229,9 @@ export default function ContactPage() {
                     type="button"
                     className="flex-1 bg-gradient-to-r from-green-600 to-teal-500 hover:from-green-700 hover:to-teal-600 flex items-center justify-center"
                     onClick={() => {
-                      const url = "https://wa.me/916389202030";
+                      const values = getValues();
+                      const message = `Hi, my name is ${values.name}. Email: ${values.email}. Phone: ${values.phone}. Message: ${values.message}`;
+                      const url = `https://wa.me/916389202030?text=${encodeURIComponent(message)}`;
                       window.open(url, "_blank");
                     }}
                   >

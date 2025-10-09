@@ -10,7 +10,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Send, Loader2, MessageCircle } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Send,
+  Loader2,
+  MessageCircle,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -40,10 +47,26 @@ export default function ContactPage() {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    const subject = encodeURIComponent("Contact Form Submission");
+    const subject = encodeURIComponent("CityWitty Franchise Business Enquiry");
+
     const body = encodeURIComponent(
-      `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nMessage: ${data.message}`
+      `Dear CityWitty Team,
+
+I am interested in exploring franchise partnership opportunities with CityWitty. Please find my details below:
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+
+Business Information / Message:
+${data.message}
+
+Looking forward to your response.
+
+Best regards,
+${data.name}`
     );
+
     const mailtoUrl = `mailto:contact@citywitty.com?subject=${subject}&body=${body}`;
     window.open(mailtoUrl, "_blank");
   };
@@ -230,8 +253,22 @@ export default function ContactPage() {
                     className="flex-1 bg-gradient-to-r from-green-600 to-teal-500 hover:from-green-700 hover:to-teal-600 flex items-center justify-center"
                     onClick={() => {
                       const values = getValues();
-                      const message = `Hi, my name is ${values.name}. Email: ${values.email}. Phone: ${values.phone}. Message: ${values.message}`;
-                      const url = `https://wa.me/916389202030?text=${encodeURIComponent(message)}`;
+                      const message = `Hello CityWitty Team,
+
+I’m interested in learning more about CityWitty Franchise opportunities.
+
+Name: ${values.name}
+Email: ${values.email}
+Phone: ${values.phone}
+
+Message:
+${values.message}
+
+Looking forward to your response.`;
+
+                      const url = `https://wa.me/916389202030?text=${encodeURIComponent(
+                        message
+                      )}`;
                       window.open(url, "_blank");
                     }}
                   >

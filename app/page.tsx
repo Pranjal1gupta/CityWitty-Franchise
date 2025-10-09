@@ -80,7 +80,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="inline-block bg-blue-50 text-blue-700 font-semibold text-sm sm:text-base px-5 py-2.5 
         rounded-full mb-5 shadow-sm border border-blue-100 hover:shadow-md hover:scale-105 transition-all
-        text-center md:text-left animate-pulse"
+        text-center md:text-left animate-pulse duration-1000"
               >
                 ⭐ Trusted by{" "}
                 <span className="text-blue-800 font-bold">
@@ -168,10 +168,10 @@ export default function Home() {
               {/* Floating Stats Card */}
               <div className="absolute -bottom-6 sm:-bottom-8 right-0 sm:-right-8 bg-white text-gray-900 rounded-2xl p-4 sm:p-6 shadow-2xl border border-orange-100 backdrop-blur-md">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-blue-500 rounded-xl flex items-center justify-center shadow-md">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-blue-500 rounded-xl flex items-center justify-center shadow-md animate-bounce">
                     <TrendingUp className="text-white" size={24} />
                   </div>
-                  <div>
+                  <div className="">
                     <div className="text-2xl sm:text-3xl font-bold text-blue-700">
                       50+
                     </div>
@@ -347,7 +347,7 @@ export default function Home() {
             ))}
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -383,7 +383,7 @@ export default function Home() {
                 <span className="font-medium">Scalable Income</span>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
@@ -411,7 +411,7 @@ export default function Home() {
 
       {/* Right Button */}
       <motion.div variants={fadeInUp} className="md:w-1/3 flex justify-end">
-        <Link href="/signup">
+        <Link href="/contact">
           <Button
             size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg animate-bounce"
@@ -778,10 +778,10 @@ export default function Home() {
               and grow with us.
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Link href="/signup">
+              <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-12 py-6 text-lg animate-bounce"
                 >
                   Contact Us
                   <ArrowRight className="ml-2" size={20} />

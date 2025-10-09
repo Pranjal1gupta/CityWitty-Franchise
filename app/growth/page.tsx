@@ -47,7 +47,7 @@ export default function GrowthPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-2xl flex items-end justify-center p-12">
             <div className="text-center text-white">
-              <h2 className="text-4xl font-bold mb-4">Expanding Across India</h2>
+              <h2 className="text-3xl font-bold mb-4">Expanding Across India</h2>
               <p className="text-xl mb-2">Be the first to represent CityWitty in your city</p>
               <p className="text-lg text-blue-100">and dominate the local market</p>
             </div>

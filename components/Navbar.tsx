@@ -27,13 +27,13 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: "/#why", label: "Why CityWitty" },
-    { href: "/model", label: "Model" },
-    { href: "/benefits", label: "Benefits" },
-    { href: "/growth", label: "Cities" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/contact", label: "Contact" },
-    { href: "/signup", label: "Apply" },
+    { href: "/#why", path: "/", label: "Why CityWitty" },
+    { href: "/model", path: "/model", label: "Model" },
+    { href: "/benefits", path: "/benefits", label: "Benefits" },
+    { href: "/growth", path: "/growth", label: "Cities" },
+    { href: "/testimonials", path: "/testimonials", label: "Testimonials" },
+    { href: "/contact", path: "/contact", label: "Contact" },
+    // { href: "/signup", path: "/signup", label: "Apply" },
   ];
 
   const isDashboard = pathname?.startsWith("/dashboard");
@@ -59,7 +59,11 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm"
+                className={`transition-colors font-medium text-sm ${
+                  pathname === link.path
+                    ? "text-blue-600"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
               >
                 {link.label}
               </Link>
@@ -150,7 +154,11 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                  className={`block py-2 transition-colors ${
+                    pathname === link.path
+                      ? "text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

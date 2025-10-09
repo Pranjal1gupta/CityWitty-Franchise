@@ -17,7 +17,7 @@ const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -55,18 +55,18 @@ export default function ContactPage() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h1 className="text-5xl font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
             Contact <span className="gradient-text">Us</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Have questions about our franchise opportunity? We're here to help
             you get started.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -83,7 +83,7 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-2 sm:space-x-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-blue-600" size={24} />
                 </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-2 sm:space-x-4">
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="text-orange-600" size={24} />
                 </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-2 sm:space-x-4">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="text-green-600" size={24} />
                 </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     )}
                   </div>
                 </form>
-                <div className="flex flex-row space-x-4 mt-6">
+                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
                   <Button
                     type="button"
                     className="flex-1 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 flex items-center justify-center"

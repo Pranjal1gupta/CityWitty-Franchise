@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description: 'Start Your Own Business with CityWitty Franchise',
     type: 'website',
   },
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

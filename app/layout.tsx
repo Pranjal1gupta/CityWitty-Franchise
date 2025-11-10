@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ConditionalLayout from '@/components/ConditionalLayout';
 import { Toaster } from '@/components/ui/toaster';
+import { OrganizationStructuredData, LocalBusinessStructuredData, BreadcrumbStructuredData } from '@/components/StructuredData';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <OrganizationStructuredData />
+        <LocalBusinessStructuredData />
+        <BreadcrumbStructuredData />
+      </head>
       <body className={inter.className}>
         <ConditionalLayout>{children}</ConditionalLayout>
         <Toaster />

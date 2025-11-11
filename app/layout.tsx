@@ -29,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="google-site-verification" content="3dC7KNGbUBtF_hgQLY5FgUfpgEf2GVtxBh_dQkohPU0" />
         <OrganizationStructuredData />
         <LocalBusinessStructuredData />
         <BreadcrumbStructuredData />

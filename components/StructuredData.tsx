@@ -5,7 +5,7 @@ export function OrganizationStructuredData() {
     "name": "CityWitty Franchise",
     "url": "https://franchise.citywitty.com",
     "logo": "https://franchise.citywitty.com/logo.png",
-    "description": "India's leading salon franchise platform with FOCO (Franchise Owned, Company Operated) model",
+    "description": "India's leading business franchise platform with FOCO (Franchise Owned, Company Operated) model",
     "foundingDate": "2023",
     "areaServed": "IN",
     "telephone": "+91-6389202030",

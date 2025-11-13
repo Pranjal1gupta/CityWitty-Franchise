@@ -137,7 +137,7 @@ export default function ModelPage() {
                   Stay informed with regular updates and strategic input while we handle daily operations.
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-start">
+                  <li className="flex items-start"> 
                     <CheckCircle2 className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
                     <span>Monthly performance reviews</span>
                   </li>
